@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
       title: 'Mini Habits',
       theme: ThemeData(
           primarySwatch: Colors.grey,
+          scaffoldBackgroundColor: const Color(0xFFFFFFFF),
           primaryTextTheme:
               TextTheme(title: TextStyle(color: Colors.lightGreen))),
       home: MyHomePage(title: 'Mini Habits'),
@@ -32,43 +33,43 @@ class _MyHomePageState extends State<MyHomePage> {
     children: <Widget>[
       Column(
         children: <Widget>[
-          Icon(Icons.check_circle, color: Colors.green),
+          Icon(Icons.check_circle, color: Color(0xff94A4FF)),
           Text('M')
         ],
       ),
       Column(
         children: <Widget>[
-          Icon(Icons.check_circle, color: Colors.green),
+          Icon(Icons.check_circle, color: Color(0xff94A4FF)),
           Text('T')
         ],
       ),
       Column(
         children: <Widget>[
-          Icon(Icons.check_circle, color: Colors.green),
+          Icon(Icons.check_circle, color: Color(0xff94A4FF)),
           Text('W')
         ],
       ),
       Column(
         children: <Widget>[
-          Icon(Icons.check_circle, color: Colors.green),
+          Icon(Icons.check_circle, color: Color(0xff94A4FF)),
           Text('T')
         ],
       ),
       Column(
         children: <Widget>[
-          Icon(Icons.check_circle, color: Colors.green),
+          Icon(Icons.check_circle, color: Color(0xff94A4FF)),
           Text('F')
         ],
       ),
       Column(
         children: <Widget>[
-          Icon(Icons.check_circle_outline, color: Colors.green),
+          Icon(Icons.check_circle_outline, color: Color(0xff94A4FF)),
           Text('S')
         ],
       ),
       Column(
         children: <Widget>[
-          Icon(Icons.check_circle_outline, color: Colors.green),
+          Icon(Icons.check_circle_outline, color: Color(0xff94A4FF)),
           Text('S')
         ],
       )
@@ -112,7 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      child: Text("Mini Habits"),
+                      child: Image.asset('assets/undraw_Taken_if77.png'),
+                      height: 400,
                     )
                   ],
                 ))
