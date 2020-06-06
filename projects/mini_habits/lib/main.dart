@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Widgets/Dialog.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,6 +29,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  bool tappedYes = false;
 
   var days = Row(
     children: <Widget>[
@@ -79,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: GestureDetector(
           onTap: (){},
@@ -113,9 +117,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      child: Image.asset('assets/undraw_Taken_if77.png'),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage('assets/undraw_Taken_if77.png'),
+                        fit: BoxFit.cover)
+                      ),
+                      child: Container(), // Here you can add something else, maybe like daily check in or stats or something else 
+                      width: 400,
                       height: 400,
-                    )
+                    ), 
+                    Text("It looks like you have no habits."),
+                    RaisedButton(onPressed: () async {
+                      final action = await Dialogs.yesAbortDialog(context, 'Create a Habit');
+                    }, color: Color(0xffAFBBFF), child: Text('Create Habit', style: TextStyle(color: Colors.black)))
                   ],
                 ))
           ],
